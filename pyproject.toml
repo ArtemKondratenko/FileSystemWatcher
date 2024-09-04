@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "FileSystemWatcher"
+version = "0.1.0"
+description = ""
+authors = ["Ваше Имя <artem-osteo@yandex.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+cloudfiles = { git = "https://github.com/ArtemKondratenko/Cloudfiles.git", branch = "master" }
+daemonize = "^2.5.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
