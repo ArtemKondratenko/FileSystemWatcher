@@ -3,7 +3,7 @@ import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
-from .polling import watch_directory
+from filesystemwatcher.polling import watch_directory
 from monitoringparser.monitoring_list_parser import load
 
 
