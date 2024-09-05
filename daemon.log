@@ -1,28 +1,18 @@
-2024-09-05 17:49:21 INFO: Демон запущен
-2024-09-05 17:49:21 INFO: Вход в основной цикл
-2024-09-05 17:49:21 INFO: Цикл демона выполняется
-2024-09-05 17:49:21 INFO: Наблюдение за путями: set()
-2024-09-05 17:49:52 INFO: Демон запущен
-2024-09-05 17:49:52 INFO: Вход в основной цикл
-2024-09-05 17:49:52 INFO: Цикл демона выполняется
-2024-09-05 17:49:52 INFO: Наблюдение за путями: {PosixPath('/home/tema/PycharmProjects/Cloudfiles/dir1')}
-2024-09-05 17:49:52 INFO: Начато отслеживание директории: /home/tema/PycharmProjects/Cloudfiles/dir1
-2024-09-05 17:49:52 ERROR: Ошибка в watch_directory для /home/tema/PycharmProjects/Cloudfiles/dir1: type object 'datetime.time' has no attribute 'sleep'
-2024-09-05 17:50:27 INFO: Демон запущен
-2024-09-05 17:50:27 INFO: Вход в основной цикл
-2024-09-05 17:50:27 INFO: Цикл демона выполняется
-2024-09-05 17:50:27 INFO: Наблюдение за путями: {PosixPath('/home/tema/PycharmProjects/Cloudfiles/dir1'), PosixPath('/home/tema/PycharmProjects/Cloudfiles/dir2')}
-2024-09-05 17:50:28 INFO: Начато отслеживание директории: /home/tema/PycharmProjects/Cloudfiles/dir1
-2024-09-05 17:50:28 ERROR: Ошибка в watch_directory для /home/tema/PycharmProjects/Cloudfiles/dir1: type object 'datetime.time' has no attribute 'sleep'
-2024-09-05 17:50:28 INFO: Начато отслеживание директории: /home/tema/PycharmProjects/Cloudfiles/dir2
-2024-09-05 17:50:28 ERROR: Ошибка в watch_directory для /home/tema/PycharmProjects/Cloudfiles/dir2: type object 'datetime.time' has no attribute 'sleep'
-2024-09-05 17:51:09 INFO: Демон запущен
-2024-09-05 17:51:09 INFO: Вход в основной цикл
-2024-09-05 17:51:09 INFO: Цикл демона выполняется
-2024-09-05 17:51:09 INFO: Наблюдение за путями: {PosixPath('/home/tema/PycharmProjects/Cloudfiles/dir3'), PosixPath('/home/tema/PycharmProjects/Cloudfiles/dir1'), PosixPath('/home/tema/PycharmProjects/Cloudfiles/dir2')}
-2024-09-05 17:51:09 INFO: Начато отслеживание директории: /home/tema/PycharmProjects/Cloudfiles/dir3
-2024-09-05 17:51:09 INFO: Начато отслеживание директории: /home/tema/PycharmProjects/Cloudfiles/dir1
-2024-09-05 17:51:09 ERROR: Ошибка в watch_directory для /home/tema/PycharmProjects/Cloudfiles/dir1: type object 'datetime.time' has no attribute 'sleep'
-2024-09-05 17:51:09 ERROR: Ошибка в watch_directory для /home/tema/PycharmProjects/Cloudfiles/dir3: type object 'datetime.time' has no attribute 'sleep'
-2024-09-05 17:51:09 INFO: Начато отслеживание директории: /home/tema/PycharmProjects/Cloudfiles/dir2
-2024-09-05 17:51:09 ERROR: Ошибка в watch_directory для /home/tema/PycharmProjects/Cloudfiles/dir2: type object 'datetime.time' has no attribute 'sleep'
+2024-09-05 18:09:52 INFO: Демон запущен
+2024-09-05 18:09:52 INFO: Вход в основной цикл
+2024-09-05 18:09:52 INFO: Цикл демона выполняется
+2024-09-05 18:09:52 INFO: Наблюдение за путями: set()
+2024-09-05 18:10:19 INFO: Демон запущен
+2024-09-05 18:10:19 INFO: Вход в основной цикл
+2024-09-05 18:10:19 INFO: Цикл демона выполняется
+2024-09-05 18:10:19 INFO: Наблюдение за путями: {PosixPath('/home/tema/PycharmProjects/Cloudfiles/dir1')}
+2024-09-05 18:10:19 INFO: Добавлен путь: /home/tema/PycharmProjects/Cloudfiles/dir1
+2024-09-05 18:10:19 INFO: Начато отслеживание директории: /home/tema/PycharmProjects/Cloudfiles/dir1
+2024-09-05 18:10:39 INFO: Демон запущен
+2024-09-05 18:10:39 INFO: Вход в основной цикл
+2024-09-05 18:10:39 INFO: Цикл демона выполняется
+2024-09-05 18:10:39 INFO: Наблюдение за путями: {PosixPath('/home/tema/PycharmProjects/Cloudfiles/dir2'), PosixPath('/home/tema/PycharmProjects/Cloudfiles/dir1')}
+2024-09-05 18:10:39 INFO: Добавлен путь: /home/tema/PycharmProjects/Cloudfiles/dir2
+2024-09-05 18:10:39 INFO: Начато отслеживание директории: /home/tema/PycharmProjects/Cloudfiles/dir2
+2024-09-05 18:10:39 INFO: Добавлен путь: /home/tema/PycharmProjects/Cloudfiles/dir1
+2024-09-05 18:10:39 INFO: Начато отслеживание директории: /home/tema/PycharmProjects/Cloudfiles/dir1
