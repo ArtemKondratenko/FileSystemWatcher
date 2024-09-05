@@ -2,7 +2,7 @@ from datetime import time
 from pathlib import Path
 from filesystemwatcher.directory import DirectoryState
 import logging
-from .main import running
+from filesystemwatcher.main import running
 
 def watch_directory(path: Path) -> None:
     logging.info(f'Начато отслеживание директории: {path}')
