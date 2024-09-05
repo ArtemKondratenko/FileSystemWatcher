@@ -19,6 +19,7 @@ def run(MONITORING_LIST: Path) -> None:
     logging.info('Демон запущен')
     logging.info('Вход в основной цикл')
 
+    monitored_paths = set()  # Для хранения отслеживаемых путей
     with ThreadPoolExecutor() as executor:
         while is_running():  # Проверяем флаг
             logging.info('Цикл демона выполняется')
@@ -26,8 +27,24 @@ def run(MONITORING_LIST: Path) -> None:
                 with open(MONITORING_LIST, 'r') as file:
                     paths = load(file)
                     logging.info(f'Наблюдение за путями: {paths}')
-                    for path in paths:
+                    new_paths = set(paths)
+
+                    # Проверяем новые и старые пути
+                    added_paths = new_paths - monitored_paths
+                    removed_paths = monitored_paths - new_paths
+
+                    # Добавляем новые пути
+                    for path in added_paths:
+                        logging.info(f'Добавлен путь: {path}')
                         executor.submit(watch_directory, path)
+
+                    # Удаляем старые пути
+                    for path in removed_paths:
+                        logging.info(f'Удален путь: {path}')
+
+                    # Обновляем отслеживаемые пути
+                    monitored_paths = new_paths
+
                 time.sleep(5)
             except Exception as e:
                 logging.error(f'Ошибка в run: {e}')
