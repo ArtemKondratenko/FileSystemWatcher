@@ -1,3 +1,4 @@
+from datetime import time
 from pathlib import Path
 from filesystemwatcher.directory import DirectoryState
 import logging
@@ -14,6 +15,7 @@ def watch_directory(path: Path) -> None:
                 for difference in differences:
                     logging.info(f"Изменение: {difference}")
             previous_directory_state = current_directory_state
+            time.sleep(1)  # Ожидание перед следующим сравнением
     except Exception as e:
         logging.error(f'Ошибка в watch_directory для {path}: {e}')
 

@@ -16,21 +16,22 @@ logging.basicConfig(
 
 
 def run(MONITORING_LIST: Path) -> None:
-    logging.info('Демон запущен')  # Это должно записаться
-    logging.info('Вход в основной цикл')  # Это должно записаться
+    logging.info('Демон запущен')
+    logging.info('Вход в основной цикл')
 
     with ThreadPoolExecutor() as executor:
         while True:
-            logging.info('Цикл демона выполняется')  # Это должно записаться
+            logging.info('Цикл демона выполняется')
             try:
                 with open(MONITORING_LIST, 'r') as file:
                     paths = load(file)
                     logging.info(f'Наблюдение за путями: {paths}')
                     for path in paths:
                         executor.submit(watch_directory, path)
-                time.sleep(1)
+                time.sleep(5)  # Увеличение времени ожидания между итерациями
             except Exception as e:
                 logging.error(f'Ошибка в run: {e}')
+                time.sleep(5)
 
 #
 # if __name__ == "__main__":
