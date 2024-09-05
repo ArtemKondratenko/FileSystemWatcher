@@ -1,4 +1,5 @@
 import logging
+import signal
 import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -15,12 +16,22 @@ logging.basicConfig(
 )
 
 
+running = True
+
+def signal_handler(sig, frame):
+    global running
+    running = False
+    logging.info('Получен сигнал завершения, останавливаем демон.')
+
+# Установка обработчика сигнала
+signal.signal(signal.SIGINT, signal_handler)
+
 def run(MONITORING_LIST: Path) -> None:
     logging.info('Демон запущен')
     logging.info('Вход в основной цикл')
 
     with ThreadPoolExecutor() as executor:
-        while True:
+        while running:  # Используем флаг для выхода из цикла
             logging.info('Цикл демона выполняется')
             try:
                 with open(MONITORING_LIST, 'r') as file:
@@ -28,7 +39,7 @@ def run(MONITORING_LIST: Path) -> None:
                     logging.info(f'Наблюдение за путями: {paths}')
                     for path in paths:
                         executor.submit(watch_directory, path)
-                time.sleep(5)  # Увеличение времени ожидания между итерациями
+                time.sleep(5)
             except Exception as e:
                 logging.error(f'Ошибка в run: {e}')
                 time.sleep(5)
