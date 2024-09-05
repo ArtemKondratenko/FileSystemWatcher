@@ -1,8 +1,10 @@
 import logging
 import time
 from concurrent.futures import ThreadPoolExecutor
+from pathlib import Path
+
 from polling import watch_directory
-from cloudfiles.main import MONITORING_LIST, load
+from monitoringparser.monitoring_list_parser import load
 
 # Настройка логирования
 logging.basicConfig(
@@ -13,7 +15,7 @@ logging.basicConfig(
 )
 
 
-def run() -> None:
+def run(MONITORING_LIST: Path) -> None:
     logging.info('Демон запущен')  # Это должно записаться
     logging.info('Вход в основной цикл')  # Это должно записаться
 
