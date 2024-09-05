@@ -1,5 +1,5 @@
 from pathlib import Path
-from model.directory import DirectoryState
+from FileSystemWatcher.directory import DirectoryState
 import logging
 
 def watch_directory(path: Path) -> None:

@@ -1,8 +1,6 @@
 import logging
 import time
-from daemon import DaemonContext
 from concurrent.futures import ThreadPoolExecutor
-from pathlib import Path
 from polling import watch_directory
 from cloudfiles.main import MONITORING_LIST, load
 
