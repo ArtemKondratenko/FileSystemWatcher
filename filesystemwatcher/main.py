@@ -3,7 +3,7 @@ import signal
 import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
-
+from filesystemwatcher.daemon_control import is_running
 from filesystemwatcher.polling import watch_directory
 from monitoringparser.monitoring_list_parser import load
 
@@ -15,23 +15,12 @@ logging.basicConfig(
     datefmt='%Y-%m-%d %H:%M:%S',
 )
 
-
-running = True
-
-def signal_handler(sig, frame):
-    global running
-    running = False
-    logging.info('Получен сигнал завершения, останавливаем демон.')
-
-# Установка обработчика сигнала
-signal.signal(signal.SIGINT, signal_handler)
-
 def run(MONITORING_LIST: Path) -> None:
     logging.info('Демон запущен')
     logging.info('Вход в основной цикл')
 
     with ThreadPoolExecutor() as executor:
-        while running:  # Используем флаг для выхода из цикла
+        while is_running():  # Проверяем флаг
             logging.info('Цикл демона выполняется')
             try:
                 with open(MONITORING_LIST, 'r') as file:

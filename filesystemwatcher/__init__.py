@@ -1,2 +1,3 @@
 from .main import run
-__all__ = [run]
+from .daemon_control import stop
+__all__ = [run, stop]
