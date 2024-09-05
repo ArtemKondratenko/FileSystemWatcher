@@ -3,10 +3,10 @@ import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
-from polling import watch_directory
+from .polling import watch_directory
 from monitoringparser.monitoring_list_parser import load
 
-# Настройка логирования
+
 logging.basicConfig(
     filename='/home/tema/PycharmProjects/FileSystemWatcher/daemon.log',
     level=logging.INFO,
